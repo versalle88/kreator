@@ -13,7 +13,7 @@ use function GuzzleHttp\Psr7\stream_for;
 
 final class HelloFriendIndexAction implements ActionInterface
 {
-    public function execute(ServerRequestInterface $request): ResponseInterface
+    public function invoke(ServerRequestInterface $request): ResponseInterface
     {
         $body = stream_for('Hello, friend.');
 

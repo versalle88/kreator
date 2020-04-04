@@ -9,5 +9,5 @@ use Psr\Http\Message\ServerRequestInterface;
 
 interface ActionInterface
 {
-    public function execute(ServerRequestInterface $request): ResponseInterface;
+    public function invoke(ServerRequestInterface $request): ResponseInterface;
 }

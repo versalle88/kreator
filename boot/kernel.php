@@ -8,7 +8,7 @@ $request = ServerRequest::fromGlobals();
 
 $action = new \App\HelloFriend\Action\HelloFriendIndexAction();
 
-$response = $action->execute($request);
+$response = $action->invoke($request);
 
 $response = $response->withProtocolVersion($request->getProtocolVersion());
 
