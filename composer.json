@@ -1,7 +1,14 @@
 {
     "require": {
         "php": "7.2.* || 7.3.* || 7.4.*",
-        "ext-mbstring": "*"
+        "ext-mbstring": "*",
+        "guzzlehttp/psr7": "^1.6",
+        "tracy/tracy": "^2.7"
+    },
+    "autoload": {
+        "psr-4": {
+            "Versalle\\Framework\\": "src/"
+        }
     },
     "config": {
         "platform": {
