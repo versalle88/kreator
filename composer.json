@@ -3,11 +3,13 @@
         "php": "7.2.* || 7.3.* || 7.4.*",
         "ext-mbstring": "*",
         "guzzlehttp/psr7": "^1.6",
+        "psr/http-message": "^1.0",
         "tracy/tracy": "^2.7"
     },
     "autoload": {
         "psr-4": {
-            "Versalle\\Framework\\": "src/"
+            "Versalle\\Framework\\": "src/",
+            "App\\": "app/modules/"
         }
     },
     "config": {

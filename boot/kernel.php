@@ -2,16 +2,15 @@
 
 declare(strict_types=1);
 
-use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ServerRequest;
-
-use function GuzzleHttp\Psr7\stream_for;
 
 $request = ServerRequest::fromGlobals();
 
-$response = new Response();
-$response = $response->withProtocolVersion($request->getProtocolVersion())
-    ->withBody(stream_for('Hello, friend.'));
+$action = new \App\HelloFriend\Action\HelloFriendIndexAction();
+
+$response = $action->execute($request);
+
+$response = $response->withProtocolVersion($request->getProtocolVersion());
 
 header("HTTP/{$response->getProtocolVersion()} {$response->getStatusCode()} {$response->getReasonPhrase()}");
 foreach ($response->getHeaders() as $name => $values) {
