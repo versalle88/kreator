@@ -4,9 +4,11 @@
         "ext-mbstring": "*",
         "guzzlehttp/psr7": "^1.6",
         "nikic/fast-route": "^1.3",
+        "psr/container": "^1.0",
         "psr/http-message": "^1.0",
         "tracy/tracy": "^2.7",
-        "twig/twig": "^3.0"
+        "twig/twig": "^3.0",
+        "versalle/container": "^1.1"
     },
     "autoload": {
         "psr-4": {

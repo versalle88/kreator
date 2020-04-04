@@ -5,7 +5,8 @@ declare(strict_types=1);
 use FastRoute\Dispatcher;
 use GuzzleHttp\Psr7\Response;
 use GuzzleHttp\Psr7\ServerRequest;
-use Versalle\Framework\Action\ActionInterface;
+use Versalle\Container\Container;
+use Versalle\Framework\ActionDomainResponder\Action\ActionInterface;
 
 $request = ServerRequest::fromGlobals();
 
@@ -27,8 +28,11 @@ switch ($routeInfo[0]) {
     case Dispatcher::FOUND:
         $actionName = $routeInfo[1];
 
+        /** @var Container $container */
+        $container = include __DIR__ . DIRECTORY_SEPARATOR . 'container.php';
+
         /** @var ActionInterface $action */
-        $action = new $actionName();
+        $action = $container->get($actionName);
 
         $response = $action->invoke($request);
 
