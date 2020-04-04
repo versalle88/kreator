@@ -1,0 +1,12 @@
+{
+    "require": {
+        "php": "7.2.* || 7.3.* || 7.4.*",
+        "ext-mbstring": "*"
+    },
+    "config": {
+        "platform": {
+            "php": "7.2.24"
+        },
+        "sort-packages": true
+    }
+}
