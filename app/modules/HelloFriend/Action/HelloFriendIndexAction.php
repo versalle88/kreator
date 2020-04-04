@@ -7,7 +7,7 @@ namespace App\HelloFriend\Action;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Psr\Http\Message\ServerRequestInterface;
-use Versalle\Framework\Action\ActionInterface;
+use Versalle\Framework\ActionDomainResponder\Action\ActionInterface;
 
 use function GuzzleHttp\Psr7\stream_for;
 
