@@ -16,10 +16,17 @@ final class TwigTemplateRendererFactory
         $this->templateDirectory = $templateDirectory;
     }
 
-    public function create(): TwigTemplateRenderer
+    public function create(string $path = null): TwigTemplateRenderer
     {
-        $paths       = $this->templateDirectory->__toString();
-        $loader      = new FilesystemLoader([$paths]);
+        $paths = [];
+
+        if (!is_null($path)) {
+            $paths[] = $path;
+        }
+
+        $paths[] = $this->templateDirectory->__toString();
+
+        $loader      = new FilesystemLoader($paths);
         $environment = new Environment($loader);
 
         return new TwigTemplateRenderer($environment);
