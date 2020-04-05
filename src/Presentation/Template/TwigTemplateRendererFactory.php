@@ -9,9 +9,17 @@ use Twig\Loader\FilesystemLoader;
 
 final class TwigTemplateRendererFactory
 {
+    private $templateDirectory;
+
+    public function __construct(TemplateDirectory $templateDirectory)
+    {
+        $this->templateDirectory = $templateDirectory;
+    }
+
     public function create(): TwigTemplateRenderer
     {
-        $loader      = new FilesystemLoader();
+        $paths       = $this->templateDirectory->__toString();
+        $loader      = new FilesystemLoader([$paths]);
         $environment = new Environment($loader);
 
         return new TwigTemplateRenderer($environment);

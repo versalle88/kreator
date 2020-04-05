@@ -24,6 +24,6 @@ final class HelloFriendIndexResponder
      */
     public function respond(): ResponseInterface
     {
-        return $this->viewFactory->create('HelloFriend::hello_friend');
+        return $this->viewFactory->create('html5.html.twig');
     }
 }

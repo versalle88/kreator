@@ -3,6 +3,7 @@
 declare(strict_types=1);
 
 use Versalle\Container\Entry\ObjectEntry;
+use Versalle\Container\Entry\ParameterEntry;
 
 return [
     'objects' => [
@@ -26,9 +27,22 @@ return [
         ],
         \Versalle\Framework\Presentation\Template\TwigTemplateRendererFactory::class => [
             'class' => \Versalle\Framework\Presentation\Template\TwigTemplateRendererFactory::class,
+            'args' => [
+                new ObjectEntry(\Versalle\Framework\Presentation\Template\TemplateDirectory::class),
+            ]
         ],
+        \Versalle\Framework\Presentation\Template\TemplateDirectory::class => [
+            'class' => \Versalle\Framework\Presentation\Template\TemplateDirectory::class,
+            'args' => [
+                new ParameterEntry('framework.constants.root_dir'),
+            ]
+        ]
     ],
     'parameters' => [
-
+        'framework' => [
+            'constants' => [
+                'root_dir' => ROOT_DIR,
+            ]
+        ]
     ],
 ];
