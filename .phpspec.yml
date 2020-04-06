@@ -1,0 +1,5 @@
+suites:
+  default:
+    spec_path: tests
+    namespace: Versalle\Framework
+    psr4_prefix: Versalle\Framework
