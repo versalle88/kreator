@@ -1,4 +1,14 @@
 {
+    "name": "versalle/kreator",
+    "description": "A simple, PSR-compliant PHP ADR micro-framework",
+    "type": "project",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Andrew Versalle",
+            "email": "andrew.versalle@gmail.com"
+        }
+    ],
     "require": {
         "php": "7.2.* || 7.3.* || 7.4.*",
         "ext-mbstring": "*",
@@ -10,11 +20,15 @@
         "twig/twig": "^3.0",
         "versalle/container": "^1.1"
     },
+    "require-dev": {
+    },
     "autoload": {
         "psr-4": {
             "Versalle\\Framework\\": "src/",
             "App\\": "app/modules/"
         }
+    },
+    "autoload-dev": {
     },
     "config": {
         "platform": {
