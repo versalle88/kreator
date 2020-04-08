@@ -21,6 +21,7 @@
         "versalle/container": "^1.1"
     },
     "require-dev": {
+        "phpspec/phpspec": "^6.1"
     },
     "autoload": {
         "psr-4": {
