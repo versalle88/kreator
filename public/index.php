@@ -13,3 +13,5 @@ try {
 }
 
 $kernel = Kernel::boot(ROOT_DIR);
+
+$kernel->run();

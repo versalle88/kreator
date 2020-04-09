@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace Versalle\Framework;
 
 use Versalle\Framework\Container\ContainerFactory;
+use Versalle\Framework\FileSystem\DirectoryList;
 
 final class Kernel
 {
@@ -39,19 +40,26 @@ final class Kernel
 
     private static function createInstance(string $rootDir): Kernel
     {
-        $containerFactory = static::createContainerFactory();
+        $containerFactory = static::createContainerFactory($rootDir);
 
         return new static($containerFactory);
     }
 
-    private static function createContainerFactory(): ContainerFactory
+    private static function createContainerFactory(string $rootDir): ContainerFactory
     {
+        $directoryList = static::createDirectoryList($rootDir);
+
         return new ContainerFactory();
     }
 
-    private static function createDirectoryList(string $rootDir)
+    private static function createDirectoryList(string $rootDir): DirectoryList
     {
+        return new DirectoryList($rootDir);
+    }
 
+    public function run()
+    {
+        require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'boot' . DIRECTORY_SEPARATOR . 'kernel.php';
     }
 
     /**

@@ -12,6 +12,11 @@ use Versalle\Framework\FileSystem\DirectoryList;
  */
 class DirectoryListSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $this->beConstructedWith(ROOT_DIR);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(DirectoryList::class);
