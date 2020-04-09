@@ -12,4 +12,4 @@ try {
     exit(1);
 }
 
-$kernel = Kernel::boot();
+$kernel = Kernel::boot(ROOT_DIR);

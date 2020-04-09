@@ -10,6 +10,8 @@ final class Kernel
 {
     private $containerFactory;
 
+    private $container;
+
     private static $instance;
 
     /**
@@ -23,18 +25,19 @@ final class Kernel
     private function __construct(ContainerFactory $containerFactory)
     {
         $this->containerFactory = $containerFactory;
+        $this->container        = $containerFactory->create();
     }
 
-    public static function boot(): Kernel
+    public static function boot(string $rootDir): Kernel
     {
         if (is_null(static::$instance)) {
-            static::$instance = static::createInstance();
+            static::$instance = static::createInstance($rootDir);
         }
 
         return static::$instance;
     }
 
-    private static function createInstance(): Kernel
+    private static function createInstance(string $rootDir): Kernel
     {
         $containerFactory = static::createContainerFactory();
 
@@ -44,6 +47,11 @@ final class Kernel
     private static function createContainerFactory(): ContainerFactory
     {
         return new ContainerFactory();
+    }
+
+    private static function createDirectoryList(string $rootDir)
+    {
+
     }
 
     /**
