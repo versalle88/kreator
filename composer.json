@@ -30,6 +30,9 @@
         }
     },
     "autoload-dev": {
+        "files": [
+            "tests/functions.php"
+        ]
     },
     "config": {
         "platform": {
