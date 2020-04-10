@@ -8,8 +8,6 @@ final class DirectoryList
 {
     private $rootDir;
 
-    private const APP = 'app';
-
     private const BOOT = 'boot';
 
     private const CONFIG = 'config';
@@ -25,6 +23,10 @@ final class DirectoryList
     private const TESTS = 'tests';
 
     private const VENDOR = 'vendor';
+
+    private const APP = 'app';
+
+    private const MODULES = 'modules';
 
     private const DS = DIRECTORY_SEPARATOR;
 
@@ -86,5 +88,10 @@ final class DirectoryList
     public function getAppConfigDir(): string
     {
         return $this->getAppRootDir() . static::CONFIG . static::DS;
+    }
+
+    public function getAppModulesDir(): string
+    {
+        return $this->getAppRootDir() . static::MODULES . static::DS;
     }
 }
