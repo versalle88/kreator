@@ -67,16 +67,16 @@ final class Kernel
      */
     private function __clone()
     {
-
     }
 
     /**
      * prevent from being unserialized (which would create a second instance of it)
      *
      * @noinspection PhpUnusedPrivateMethodInspection
+     *
+     * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
      */
     private function __wakeup()
     {
-
     }
 }
