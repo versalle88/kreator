@@ -76,21 +76,21 @@ class DirectoryListSpec extends ObjectBehavior
             ->shouldReturn(ROOT_DIR . DIRECTORY_SEPARATOR . 'vendor' . DIRECTORY_SEPARATOR);
     }
 
-    function it_gets_app_root_dir()
+    function it_gets_application_root_dir()
     {
-        $this->getAppRootDir()
+        $this->getApplicationRootDir()
             ->shouldReturn(ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR);
     }
 
-    function it_gets_app_config_dir()
+    function it_gets_application_config_dir()
     {
-        $this->getAppConfigDir()
+        $this->getApplicationConfigDir()
             ->shouldReturn(ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR);
     }
 
-    function it_gets_app_modules_dir()
+    function it_gets_application_modules_dir()
     {
-        $this->getAppModulesDir()
+        $this->getApplicationModulesDir()
             ->shouldReturn(ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR);
     }
 }

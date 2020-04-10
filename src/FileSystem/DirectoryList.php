@@ -80,18 +80,18 @@ final class DirectoryList
         return $this->getFrameworkRootDir() . static::VENDOR . static::DS;
     }
 
-    public function getAppRootDir(): string
+    public function getApplicationRootDir(): string
     {
         return $this->getFrameworkRootDir() . static::APP . static::DS;
     }
 
-    public function getAppConfigDir(): string
+    public function getApplicationConfigDir(): string
     {
-        return $this->getAppRootDir() . static::CONFIG . static::DS;
+        return $this->getApplicationRootDir() . static::CONFIG . static::DS;
     }
 
-    public function getAppModulesDir(): string
+    public function getApplicationModulesDir(): string
     {
-        return $this->getAppRootDir() . static::MODULES . static::DS;
+        return $this->getApplicationRootDir() . static::MODULES . static::DS;
     }
 }

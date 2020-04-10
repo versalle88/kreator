@@ -5,6 +5,7 @@ namespace spec\Versalle\Framework\Container;
 use PhpSpec\ObjectBehavior;
 use Psr\Container\ContainerInterface;
 use Versalle\Framework\Container\ContainerFactory;
+use Versalle\Framework\FileSystem\DirectoryList;
 
 /**
  * Class ContainerFactorySpec
@@ -13,6 +14,11 @@ use Versalle\Framework\Container\ContainerFactory;
  */
 class ContainerFactorySpec extends ObjectBehavior
 {
+    function let()
+    {
+        $this->beConstructedWith(new DirectoryList(ROOT_DIR));
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(ContainerFactory::class);

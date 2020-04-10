@@ -49,7 +49,7 @@ final class Kernel
     {
         $directoryList = static::createDirectoryList($rootDir);
 
-        return new ContainerFactory();
+        return new ContainerFactory($directoryList);
     }
 
     private static function createDirectoryList(string $rootDir): DirectoryList
