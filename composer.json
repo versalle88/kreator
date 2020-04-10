@@ -39,7 +39,7 @@
     },
     "scripts": {
         "tests": [
-
+            "phpspec run"
         ]
     }
 }
