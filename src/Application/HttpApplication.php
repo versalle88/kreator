@@ -8,6 +8,6 @@ final class HttpApplication implements ApplicationInterface
 {
     public function run(): void
     {
-        // TODO: Implement run() method.
+        require ROOT_DIR . DIRECTORY_SEPARATOR . 'boot' . DIRECTORY_SEPARATOR . 'kernel.php';
     }
 }

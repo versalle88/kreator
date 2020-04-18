@@ -63,9 +63,9 @@ final class Kernel
         return $this->container->get(ApplicationInterface::class);
     }
 
-    public function run()
+    public function run(ApplicationInterface $application): void
     {
-        require dirname(__DIR__) . DIRECTORY_SEPARATOR . 'boot' . DIRECTORY_SEPARATOR . 'kernel.php';
+        $application->run();
     }
 
     /**

@@ -12,6 +12,7 @@ try {
     exit(1);
 }
 
-$kernel = Kernel::boot(ROOT_DIR);
+$kernel      = Kernel::boot(ROOT_DIR);
+$application = $kernel->createApplication();
 
-$kernel->run();
+$kernel->run($application);
