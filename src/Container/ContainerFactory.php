@@ -12,8 +12,6 @@ final class ContainerFactory
 {
     private $directoryList;
 
-    private $containerClassName = Container::class;
-
     public function __construct(DirectoryList $directoryList)
     {
         $this->directoryList = $directoryList;
@@ -26,7 +24,7 @@ final class ContainerFactory
 
         $config = $this->mergeConfig($frameworkConfig, $applicationConfig);
 
-        return new $this->containerClassName($config['objects'], $config['parameters']);
+        return new Container($config['objects'], $config['parameters']);
     }
 
     private function loadFrameworkConfig(): array
