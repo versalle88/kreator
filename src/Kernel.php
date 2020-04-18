@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Versalle\Framework;
 
+use Versalle\Framework\Application\ApplicationInterface;
 use Versalle\Framework\Container\ContainerFactory;
 use Versalle\Framework\FileSystem\DirectoryList;
 
@@ -55,6 +56,11 @@ final class Kernel
     private static function createDirectoryList(string $rootDir): DirectoryList
     {
         return new DirectoryList($rootDir);
+    }
+
+    public function createApplication(): ApplicationInterface
+    {
+        return $this->container->get(ApplicationInterface::class);
     }
 
     public function run()

@@ -3,6 +3,7 @@
 namespace spec\Versalle\Framework;
 
 use PhpSpec\ObjectBehavior;
+use Versalle\Framework\Application\ApplicationInterface;
 use Versalle\Framework\Kernel;
 
 /**
@@ -12,8 +13,19 @@ use Versalle\Framework\Kernel;
  */
 class KernelSpec extends ObjectBehavior
 {
+    function let()
+    {
+        $this->beConstructedThrough('boot', [ROOT_DIR]);
+    }
+
     function it_is_initializable()
     {
         $this->shouldHaveType(Kernel::class);
+    }
+
+    function it_creates_an_instance_of_application_interface()
+    {
+        $this->createApplication()
+            ->shouldReturnAnInstanceOf(ApplicationInterface::class);
     }
 }
