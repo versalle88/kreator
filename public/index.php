@@ -15,4 +15,4 @@ try {
 $kernel      = Kernel::boot(ROOT_DIR);
 $application = $kernel->createApplication();
 
-$kernel->run($application);
+$kernel->launch($application);

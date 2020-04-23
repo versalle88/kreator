@@ -63,7 +63,7 @@ final class Kernel
         return $this->container->get(ApplicationInterface::class);
     }
 
-    public function run(ApplicationInterface $application): void
+    public function launch(ApplicationInterface $application): void
     {
         $application->run();
     }
