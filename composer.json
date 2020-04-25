@@ -23,6 +23,9 @@
     "require-dev": {
         "phpspec/phpspec": "^6.1"
     },
+    "provide": {
+        "psr/container-implementation": "1.0.0"
+    },
     "autoload": {
         "psr-4": {
             "Versalle\\Framework\\": "src/",
