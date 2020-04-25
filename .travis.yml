@@ -11,4 +11,4 @@ before_script:
   - composer validate --no-check-all --strict
 
 script:
-  - composer tests
+  - composer test
