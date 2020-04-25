@@ -15,7 +15,7 @@ class KernelSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedThrough('boot', [ROOT_DIR]);
+        $this->beConstructedThrough('boot', [FRAMEWORK_ROOT_DIR]);
     }
 
     function it_is_initializable()

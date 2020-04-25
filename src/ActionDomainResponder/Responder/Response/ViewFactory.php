@@ -47,7 +47,7 @@ final class ViewFactory
 
         $pieces = explode('::', $view);
 
-        return ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . $pieces[0] . DIRECTORY_SEPARATOR . 'views';
+        return FRAMEWORK_ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . $pieces[0] . DIRECTORY_SEPARATOR . 'views';
     }
 
     private function getView(string $view): string

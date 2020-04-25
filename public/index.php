@@ -12,7 +12,7 @@ try {
     exit(1);
 }
 
-$kernel      = Kernel::boot(ROOT_DIR);
+$kernel      = Kernel::boot(FRAMEWORK_ROOT_DIR);
 $application = $kernel->createApplication();
 
 $kernel->launch($application);
