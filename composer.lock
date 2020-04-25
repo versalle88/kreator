@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "612b6d2e7e8821ea6242f6bfc5ba1e0b",
+    "content-hash": "e26b7f0bc01d8cafc95bfd79306ca9b5",
     "packages": [
         {
             "name": "guzzlehttp/psr7",
@@ -516,16 +516,16 @@
         },
         {
             "name": "versalle/container",
-            "version": "v1.1.0",
+            "version": "v2.0.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/versalle88/container.git",
-                "reference": "614c3924a491b8e44db2004f95e3fd4b6899d932"
+                "reference": "59162fe216d9b1f8a4ab118ce260f8cb02713ed5"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/versalle88/container/zipball/614c3924a491b8e44db2004f95e3fd4b6899d932",
-                "reference": "614c3924a491b8e44db2004f95e3fd4b6899d932",
+                "url": "https://api.github.com/repos/versalle88/container/zipball/59162fe216d9b1f8a4ab118ce260f8cb02713ed5",
+                "reference": "59162fe216d9b1f8a4ab118ce260f8cb02713ed5",
                 "shasum": ""
             },
             "require": {
@@ -559,7 +559,7 @@
                 }
             ],
             "description": "A PSR-11: Container interface implementation library",
-            "time": "2020-03-16T01:19:44+00:00"
+            "time": "2020-04-25T15:53:24+00:00"
         }
     ],
     "packages-dev": [

@@ -22,5 +22,5 @@ function _container(): ContainerInterface
 
 function _containerFactory(): ContainerFactory
 {
-    return new ContainerFactory(new DirectoryList(ROOT_DIR));
+    return new ContainerFactory(new DirectoryList(FRAMEWORK_ROOT_DIR));
 }

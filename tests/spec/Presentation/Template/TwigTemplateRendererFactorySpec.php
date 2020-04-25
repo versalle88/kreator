@@ -16,7 +16,7 @@ class TwigTemplateRendererFactorySpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith(new DirectoryList(ROOT_DIR));
+        $this->beConstructedWith(new DirectoryList(FRAMEWORK_ROOT_DIR));
     }
 
     function it_is_initializable()
