@@ -41,7 +41,7 @@
         "sort-packages": true
     },
     "scripts": {
-        "tests": [
+        "test": [
             "phpspec run"
         ]
     }
