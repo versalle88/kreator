@@ -224,4 +224,5 @@ $RECYCLE.BIN/
 *.max
 
 ### Kreator template
+!public/favicon.ico
 !public/icon.png
