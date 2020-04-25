@@ -1,4 +1,4 @@
-<?php
+<?php /** @noinspection PhpIllegalPsrClassPathInspection */
 
 namespace spec\Versalle\Framework\Presentation\Template;
 
@@ -7,6 +7,11 @@ use Versalle\Framework\FileSystem\DirectoryList;
 use Versalle\Framework\Presentation\Template\TwigTemplateRenderer;
 use Versalle\Framework\Presentation\Template\TwigTemplateRendererFactory;
 
+/**
+ * Class TwigTemplateRendererFactorySpec
+ *
+ * @noinspection PhpUnused
+ */
 class TwigTemplateRendererFactorySpec extends ObjectBehavior
 {
     function let()

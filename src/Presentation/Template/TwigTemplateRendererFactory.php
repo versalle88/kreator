@@ -19,17 +19,25 @@ final class TwigTemplateRendererFactory
 
     public function create(string $path = null): TwigTemplateRenderer
     {
+        $paths = $this->getPaths($path);
+
+        $loader      = new FilesystemLoader($paths);
+        $environment = new Environment($loader);
+
+        return new TwigTemplateRenderer($environment);
+    }
+
+    private function getPaths(string $path = null): array
+    {
         $paths = [];
 
         if (!is_null($path)) {
             $paths[] = $path;
         }
 
-//        $paths[] = $this->templateDirectory->__toString();
+        $paths[] = $this->directoryList->getApplicationResourcesDir() . 'templates';
+        $paths[] = $this->directoryList->getFrameworkResourcesDir() . 'templates';
 
-        $loader      = new FilesystemLoader($paths);
-        $environment = new Environment($loader);
-
-        return new TwigTemplateRenderer($environment);
+        return $paths;
     }
 }

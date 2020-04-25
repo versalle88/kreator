@@ -94,4 +94,9 @@ final class DirectoryList
     {
         return $this->getApplicationRootDir() . static::MODULES . static::DS;
     }
+
+    public function getApplicationResourcesDir(): string
+    {
+        return $this->getApplicationRootDir() . static::RESOURCES . static::DS;
+    }
 }

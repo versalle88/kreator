@@ -93,4 +93,10 @@ class DirectoryListSpec extends ObjectBehavior
         $this->getApplicationModulesDir()
             ->shouldReturn(ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR);
     }
+
+    function it_gets_application_resources_dir()
+    {
+        $this->getApplicationResourcesDir()
+            ->shouldReturn(ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'resources' . DIRECTORY_SEPARATOR);
+    }
 }
