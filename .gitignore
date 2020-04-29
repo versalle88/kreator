@@ -222,3 +222,7 @@ $RECYCLE.BIN/
 # 3D Images
 *.3dm
 *.max
+
+### Kreator template
+!public/favicon.ico
+!public/icon.png
