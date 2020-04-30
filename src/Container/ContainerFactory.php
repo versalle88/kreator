@@ -42,10 +42,10 @@ final class ContainerFactory
     private function mergeConfig(array $frameworkConfig, array $applicationConfig): array
     {
         foreach ($applicationConfig['objects'] as $key => $object) {
-            $frameworkConfig['objects'][$key] = array_merge($frameworkConfig['objects'][$key], $object);
+            $frameworkConfig['objects'][$key] = array_merge($frameworkConfig['objects'][$key] ?? [], $object);
         }
         foreach ($applicationConfig['parameters'] as $key => $object) {
-            $frameworkConfig['parameters'][$key] = array_merge($frameworkConfig['parameters'][$key], $object);
+            $frameworkConfig['parameters'][$key] = array_merge($frameworkConfig['parameters'][$key] ?? [], $object);
         }
 
         return $frameworkConfig;
