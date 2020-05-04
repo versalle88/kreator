@@ -8,4 +8,6 @@ require __DIR__ . DIRECTORY_SEPARATOR . 'constants.php';
 
 require __DIR__ . DIRECTORY_SEPARATOR . 'autoload.php';
 
+require __DIR__ . DIRECTORY_SEPARATOR . 'environment.php';
+
 require __DIR__ . DIRECTORY_SEPARATOR . 'debugger.php';
