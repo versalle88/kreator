@@ -1,12 +1,16 @@
-<!DOCTYPE html>
+<!doctype html>
+{% block html_tag %}
 <html lang="en">
+{% endblock %}
 <head>
-    <meta charset="UTF-8">
-    <title>Kreator</title>
+    {% block head %}
+        <meta charset="UTF-8">
+        <title>Kreator</title>
+    {% endblock %}
 </head>
 
 <body>
-{% block content %}{% endblock %}
+    {% block body %}{% endblock %}
 </body>
 
 </html>
