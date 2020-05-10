@@ -1,11 +1,11 @@
 <!doctype html>
 {% block html_tag %}
-<html lang="en">
+<html lang="{{ _lang|default('en') }}">
 {% endblock %}
 <head>
     {% block head %}
-        <meta charset="UTF-8">
-        <title>Kreator</title>
+        <meta charset="utf-8">
+        <title>{{ _title|default('Kreator') }}</title>
     {% endblock %}
 </head>
 
