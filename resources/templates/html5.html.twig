@@ -1,12 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
+<!doctype html>
+{% block html_tag %}
+<html lang="{{ _lang|default('en') }}">
+{% endblock %}
 <head>
-    <meta charset="UTF-8">
-    <title>Kreator</title>
+    {% block head %}
+        <meta charset="utf-8">
+        <title>{{ _title|default('Kreator') }}</title>
+    {% endblock %}
 </head>
 
-<body>
-{% block content %}{% endblock %}
+<body id="{{ _id|default('hello-friend') }}">
+    {% block body %}{% endblock %}
 </body>
 
 </html>

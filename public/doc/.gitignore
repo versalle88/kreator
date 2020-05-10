@@ -1,0 +1,4 @@
+# Ignore everything in this directory (NOTE: you can remove this file if you want to commit other files in this directory to version control)
+*
+# Except this file
+!.gitignore

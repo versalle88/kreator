@@ -1,7 +1,10 @@
-<!doctype html>
-<html class="no-js" lang="{{ _lang|default('en') }}">
+{% extends 'html5.html.twig' %}
 
-<head>
+{% block html_tag %}
+<html class="no-js" lang="{{ _lang|default('en') }}">
+{% endblock %}
+
+{% block head %}
     <meta charset="utf-8">
     <title>{{ _title|default('Kreator') }}</title>
     <meta name="description" content="{{ _description|default('A simple, PSR-compliant PHP ADR micro-framework') }}">
@@ -14,26 +17,34 @@
     <link rel="stylesheet" href="css/main.css">
 
     <meta name="theme-color" content="#fafafa">
-</head>
+{% endblock %}
 
-<body>
+{% block body %}
     <!--[if IE]>
-    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a
+            href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
     <![endif]-->
 
     {% block content %}{% endblock %}
     <script src="js/vendor/modernizr-3.8.0.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-    <script>window.jQuery || document.write('<script src="js/vendor/jquery-3.4.1.min.js"><\/script>')</script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+            integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write( '<script src="js/vendor/jquery-3.4.1.min.js"><\/script>' )</script>
     <script src="js/plugins.js"></script>
     <script src="js/main.js"></script>
 
+    {% block javascript_body %}{% endblock %}
+
     <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
     <script>
-        window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
-        ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+        window.ga = function () {
+            ga.q.push( arguments )
+        };
+        ga.q = [];
+        ga.l = +new Date;
+        ga( 'create', 'UA-XXXXX-Y', 'auto' );
+        ga( 'set', 'transport', 'beacon' );
+        ga( 'send', 'pageview' )
     </script>
     <script src="https://www.google-analytics.com/analytics.js" async></script>
-</body>
-
-</html>
+{% endblock %}
