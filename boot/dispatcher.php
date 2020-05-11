@@ -12,7 +12,7 @@ return simpleDispatcher(
         $applicationRoutes = include APP_DIR . DIRECTORY_SEPARATOR . 'config' . DIRECTORY_SEPARATOR . 'routes.php';
 
         foreach ($applicationRoutes as $key => $item) {
-            $routes[$key] = array_merge($routes[$key], $item);
+            $routes[$key] = array_merge($routes[$key] ?? [], $item);
         }
 
         foreach ($routes as $route => $item) {
