@@ -37,66 +37,66 @@ final class DirectoryList
 
     public function getFrameworkRootDir(): string
     {
-        return $this->rootDir . DirectoryList::DS;
+        return $this->rootDir . self::DS;
     }
 
     public function getFrameworkBootDir(): string
     {
-        return $this->getFrameworkRootDir() . self::BOOT . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::BOOT . self::DS;
     }
 
     public function getFrameworkConfigDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::CONFIG . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::CONFIG . self::DS;
     }
 
     public function getFrameworkDocsDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::DOCS . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::DOCS . self::DS;
     }
 
     public function getFrameworkPublicDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::PUBLIC . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::PUBLIC . self::DS;
     }
 
     public function getFrameworkResourcesDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::RESOURCES . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::RESOURCES . self::DS;
     }
 
     public function getFrameworkSrcDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::SRC . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::SRC . self::DS;
     }
 
     public function getFrameworkTestsDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::TESTS . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::TESTS . self::DS;
     }
 
     public function getFrameworkVendorDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::VENDOR . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::VENDOR . self::DS;
     }
 
     public function getApplicationRootDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::APP . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::APP . self::DS;
     }
 
     public function getApplicationConfigDir(): string
     {
-        return $this->getApplicationRootDir() . DirectoryList::CONFIG . DirectoryList::DS;
+        return $this->getApplicationRootDir() . self::CONFIG . self::DS;
     }
 
     public function getApplicationModulesDir(): string
     {
-        return $this->getApplicationRootDir() . DirectoryList::MODULES . DirectoryList::DS;
+        return $this->getApplicationRootDir() . self::MODULES . self::DS;
     }
 
     public function getApplicationResourcesDir(): string
     {
-        return $this->getApplicationRootDir() . DirectoryList::RESOURCES . DirectoryList::DS;
+        return $this->getApplicationRootDir() . self::RESOURCES . self::DS;
     }
 }
