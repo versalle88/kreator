@@ -42,7 +42,7 @@ final class DirectoryList
 
     public function getFrameworkBootDir(): string
     {
-        return $this->getFrameworkRootDir() . DirectoryList::BOOT . DirectoryList::DS;
+        return $this->getFrameworkRootDir() . self::BOOT . DirectoryList::DS;
     }
 
     public function getFrameworkConfigDir(): string
