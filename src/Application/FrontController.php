@@ -1,31 +1,33 @@
 <?php
 
+/**
+ * @noinspection PhpUnused
+ */
+
 declare(strict_types=1);
 
 namespace Versalle\Framework\Application;
 
 use FastRoute\Dispatcher;
 use GuzzleHttp\Psr7\Response;
-use Psr\Http\Message\RequestInterface;
 use Psr\Http\Message\ResponseInterface;
+use Psr\Http\Message\ServerRequestInterface;
 
 final class FrontController implements FrontControllerInterface
 {
     private $router;
 
-    public function __construct(RouterInterface $router)
+    private $actionFactory;
+
+    public function __construct(RouterInterface $router, ActionFactory $actionFactory)
     {
-        $this->router = $router;
+        $this->router        = $router;
+        $this->actionFactory = $actionFactory;
     }
 
-    public function dispatch(RequestInterface $request): ResponseInterface
+    public function dispatch(ServerRequestInterface $request): ResponseInterface
     {
         $routeInfo = $this->router->route($request);
-
-        echo '<pre>';
-        var_dump($routeInfo);
-        echo '</pre>';
-        exit;
 
         switch ($routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
@@ -37,7 +39,7 @@ final class FrontController implements FrontControllerInterface
 
                 break;
             case Dispatcher::FOUND:
-                $response = $this->prepareFoundResponse($routeInfo);
+                $response = $this->prepareFoundResponse($request, $routeInfo);
 
                 break;
             default:
@@ -47,9 +49,11 @@ final class FrontController implements FrontControllerInterface
         return $response;
     }
 
-    private function prepareFoundResponse(array $routeInfo): ResponseInterface
+    private function prepareFoundResponse(ServerRequestInterface $request, array $routeInfo): ResponseInterface
     {
+        $action = $this->actionFactory->create($routeInfo);
 
+        return $action->invoke($request);
     }
 
     private function prepareNotFoundResponse(): ResponseInterface

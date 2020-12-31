@@ -27,12 +27,19 @@ return [
             'class' => \Versalle\Framework\Application\FrontController::class,
             'args'  => [
                 new ObjectEntry(\Versalle\Framework\Application\RouterInterface::class),
+                new ObjectEntry(\Versalle\Framework\Application\ActionFactory::class),
             ],
         ],
         \Versalle\Framework\Application\RouterInterface::class                          => [
             'class' => \Versalle\Framework\Application\NikicFastRouteRouter::class,
             'args'  => [
                 new ObjectEntry(\Versalle\Framework\FileSystem\DirectoryList::class),
+            ],
+        ],
+        \Versalle\Framework\Application\ActionFactory::class                            => [
+            'class' => \Versalle\Framework\Application\ActionFactory::class,
+            'args'  => [
+                new ObjectEntry(\Psr\Container\ContainerInterface::class),
             ],
         ],
         \App\HelloFriend\Action\HelloFriendIndexAction::class                           => [
