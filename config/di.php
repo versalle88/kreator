@@ -1,6 +1,8 @@
 <?php
 
-/** @noinspection PhpFullyQualifiedNameUsageInspection */
+/**
+ * @noinspection PhpFullyQualifiedNameUsageInspection
+ */
 
 declare(strict_types=1);
 
@@ -17,6 +19,12 @@ return [
         ],
         \Versalle\Framework\Application\ApplicationInterface::class                     => [
             'class' => \Versalle\Framework\Application\HttpApplication::class,
+            'args'  => [
+                new ObjectEntry(\Versalle\Framework\Application\FrontControllerInterface::class),
+            ],
+        ],
+        \Versalle\Framework\Application\FrontControllerInterface::class                 => [
+            'class' => \Versalle\Framework\Application\FrontController::class,
         ],
         \App\HelloFriend\Action\HelloFriendIndexAction::class                           => [
             'class' => \App\HelloFriend\Action\HelloFriendIndexAction::class,
@@ -47,7 +55,7 @@ return [
         'framework' => [
             'constants' => [
                 'root_dir' => FRAMEWORK_ROOT_DIR,
-            ]
-        ]
+            ],
+        ],
     ],
 ];
