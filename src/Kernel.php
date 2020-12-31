@@ -8,6 +8,12 @@ use Versalle\Framework\Application\ApplicationInterface;
 use Versalle\Framework\Container\ContainerFactory;
 use Versalle\Framework\FileSystem\DirectoryList;
 
+/**
+ * Class Kernel
+ *
+ * @SuppressWarnings(PHPMD.UnusedPrivateField)
+ * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
+ */
 final class Kernel
 {
     private $containerFactory;
@@ -32,23 +38,23 @@ final class Kernel
 
     public static function boot(string $rootDir): Kernel
     {
-        if (is_null(static::$instance)) {
-            static::$instance = static::createInstance($rootDir);
+        if (is_null(Kernel::$instance)) {
+            Kernel::$instance = Kernel::createInstance($rootDir);
         }
 
-        return static::$instance;
+        return Kernel::$instance;
     }
 
     private static function createInstance(string $rootDir): Kernel
     {
-        $containerFactory = static::createContainerFactory($rootDir);
+        $containerFactory = Kernel::createContainerFactory($rootDir);
 
-        return new static($containerFactory);
+        return new Kernel($containerFactory);
     }
 
     private static function createContainerFactory(string $rootDir): ContainerFactory
     {
-        $directoryList = static::createDirectoryList($rootDir);
+        $directoryList = Kernel::createDirectoryList($rootDir);
 
         return new ContainerFactory($directoryList);
     }
