@@ -8,5 +8,5 @@ use Psr\Http\Message\RequestInterface;
 
 interface RouterInterface
 {
-    public function match(RequestInterface $request): array;
+    public function route(RequestInterface $request): array;
 }

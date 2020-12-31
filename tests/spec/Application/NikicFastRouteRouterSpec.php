@@ -32,7 +32,7 @@ class NikicFastRouteRouterSpec extends ObjectBehavior
 
     function it_matches_a_request_to_a_route(RequestInterface $request)
     {
-        $this->match($request)
+        $this->route($request)
             ->shouldBeArray();
     }
 }

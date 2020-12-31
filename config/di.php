@@ -25,6 +25,15 @@ return [
         ],
         \Versalle\Framework\Application\FrontControllerInterface::class                 => [
             'class' => \Versalle\Framework\Application\FrontController::class,
+            'args'  => [
+                new ObjectEntry(\Versalle\Framework\Application\RouterInterface::class),
+            ],
+        ],
+        \Versalle\Framework\Application\RouterInterface::class                          => [
+            'class' => \Versalle\Framework\Application\NikicFastRouteRouter::class,
+            'args'  => [
+                new ObjectEntry(\Versalle\Framework\FileSystem\DirectoryList::class),
+            ],
         ],
         \App\HelloFriend\Action\HelloFriendIndexAction::class                           => [
             'class' => \App\HelloFriend\Action\HelloFriendIndexAction::class,

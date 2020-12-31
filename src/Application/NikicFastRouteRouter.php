@@ -20,7 +20,7 @@ final class NikicFastRouteRouter implements RouterInterface
         $this->directoryList = $directoryList;
     }
 
-    public function match(RequestInterface $request): array
+    public function route(RequestInterface $request): array
     {
         $dispatcher = $this->createDispatcher();
 
