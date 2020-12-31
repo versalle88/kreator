@@ -17,7 +17,7 @@ class NikicFastRouteRouterSpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith(new DirectoryList(FRAMEWORK_ROOT_DIR));
+        $this->beConstructedWith(_get(DirectoryList::class));
     }
 
     function it_is_initializable()

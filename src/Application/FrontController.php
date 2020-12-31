@@ -22,6 +22,11 @@ final class FrontController implements FrontControllerInterface
     {
         $routeInfo = $this->router->route($request);
 
+        echo '<pre>';
+        var_dump($routeInfo);
+        echo '</pre>';
+        exit;
+
         switch ($routeInfo[0]) {
             case Dispatcher::NOT_FOUND:
                 $response = $this->prepareNotFoundResponse();
