@@ -1,5 +1,11 @@
 <?php
 
+/**
+ * @noinspection MessDetectorValidationInspection
+ * @noinspection PhpUnused
+ * @noinspection RedundantSuppression
+ */
+
 declare(strict_types=1);
 
 namespace App\HelloFriend\Action;

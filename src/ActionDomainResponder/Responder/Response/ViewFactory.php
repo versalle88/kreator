@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace Versalle\Framework\ActionDomainResponder\Responder\Response;
 
-use Exception;
 use GuzzleHttp\Psr7\Response;
 use Psr\Http\Message\ResponseInterface;
 use Versalle\Framework\Presentation\Template\TwigTemplateRendererFactory;
@@ -20,14 +19,6 @@ final class ViewFactory
         $this->factory = $factory;
     }
 
-    /**
-     * @param string $view
-     * @param array $data
-     *
-     * @return ResponseInterface
-     *
-     * @throws Exception
-     */
     public function create(string $view, array $data = []): ResponseInterface
     {
         $path             = $this->getPath($view);
@@ -47,7 +38,8 @@ final class ViewFactory
 
         $pieces = explode('::', $view);
 
-        return FRAMEWORK_ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR . $pieces[0] . DIRECTORY_SEPARATOR . 'views';
+        return FRAMEWORK_ROOT_DIR . DIRECTORY_SEPARATOR . 'app' . DIRECTORY_SEPARATOR . 'modules' . DIRECTORY_SEPARATOR
+            . $pieces[0] . DIRECTORY_SEPARATOR . 'views';
     }
 
     private function getView(string $view): string
