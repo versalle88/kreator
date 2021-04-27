@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Versalle\Framework;
 
+use Exception;
 use Versalle\Framework\Application\ApplicationInterface;
 use Versalle\Framework\Container\ContainerFactory;
 use Versalle\Framework\FileSystem\DirectoryList;
@@ -78,11 +79,10 @@ final class Kernel
     /**
      * prevent from being unserialized (which would create a second instance of it)
      *
-     * @noinspection PhpUnusedPrivateMethodInspection
-     *
-     * @SuppressWarnings(PHPMD.UnusedPrivateMethod)
+     * @throws Exception
      */
-    private function __wakeup()
+    public function __wakeup()
     {
+        throw new Exception("Cannot unserialize singleton");
     }
 }
