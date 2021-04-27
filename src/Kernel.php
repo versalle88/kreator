@@ -11,8 +11,6 @@ use Versalle\Framework\FileSystem\DirectoryList;
 
 final class Kernel
 {
-    private $containerFactory;
-
     private $container;
 
     private static $instance;
@@ -27,8 +25,7 @@ final class Kernel
      */
     private function __construct(ContainerFactory $containerFactory)
     {
-        $this->containerFactory = $containerFactory;
-        $this->container        = $containerFactory->create();
+        $this->container = $containerFactory->create();
     }
 
     public static function boot(string $rootDir): Kernel
