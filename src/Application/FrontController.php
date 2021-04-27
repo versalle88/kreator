@@ -53,7 +53,7 @@ final class FrontController implements FrontControllerInterface
     {
         $action = $this->actionFactory->create($routeInfo);
 
-        return $action->invoke($request);
+        return $action->handle($request);
     }
 
     private function prepareNotFoundResponse(): ResponseInterface
