@@ -5,10 +5,9 @@ declare(strict_types=1);
 namespace Versalle\Framework\ActionDomainResponder\Responder\Response;
 
 use GuzzleHttp\Psr7\Response;
+use GuzzleHttp\Psr7\Utils;
 use Psr\Http\Message\ResponseInterface;
 use Versalle\Framework\Presentation\Template\TwigTemplateRendererFactory;
-
-use function GuzzleHttp\Psr7\stream_for;
 
 final class ViewFactory
 {
@@ -25,7 +24,7 @@ final class ViewFactory
         $view             = $this->getView($view);
         $templateRenderer = $this->factory->create($path);
         $content          = $templateRenderer->render($view, $data);
-        $body             = stream_for($content);
+        $body             = Utils::streamFor($content);
 
         return (new Response())->withBody($body);
     }
