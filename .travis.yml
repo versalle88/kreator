@@ -4,11 +4,12 @@ php:
   - '7.2'
   - '7.3'
   - '7.4'
+  - '8.0'
 
 before_script:
   - phpenv config-rm xdebug.ini
   - composer install
-  - composer validate --no-check-all --strict
 
 script:
+  - composer validate --no-check-all --strict
   - composer test

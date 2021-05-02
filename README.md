@@ -1,4 +1,5 @@
 # Kreator (versalle/kreator)
+
 A simple, PSR-compliant PHP ADR micro-framework
 
 [![Author](http://img.shields.io/badge/author-@versalle88-blue.svg?style=flat-square)](https://twitter.com/versalle88)
@@ -7,12 +8,17 @@ A simple, PSR-compliant PHP ADR micro-framework
 [![Build Status](https://img.shields.io/travis/versalle88/kreator/master.svg?style=flat-square)](https://travis-ci.org/versalle88/kreator)
 [![Total Downloads](https://img.shields.io/packagist/dt/versalle/kreator.svg?style=flat-square)](https://packagist.org/packages/versalle/kreator)
 
-This package is compliant with [PSR-1], [PSR-4], [PSR-7], [PSR-11], and [PSR-12]. If you notice compliance oversights, please send a patch via pull request.
+This package is compliant with [PSR-1], [PSR-4], [PSR-7], [PSR-11], and [PSR-12]. If you notice compliance oversights,
+please send a patch via pull request.
 
 [PSR-1]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-1-basic-coding-standard.md
+
 [PSR-4]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-4-autoloader.md
+
 [PSR-7]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-7-http-message.md
+
 [PSR-11]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-11-container.md
+
 [PSR-12]: https://github.com/php-fig/fig-standards/blob/master/accepted/PSR-12-extended-coding-style-guide.md
 
 ## Install
@@ -30,6 +36,7 @@ The following versions of PHP are supported by this version.
 * PHP 7.2
 * PHP 7.3
 * PHP 7.4
+* PHP 8.0
 
 ## Documentation
 
@@ -55,4 +62,5 @@ If you discover any security related issues, please email andrew.versalle@gmail.
 
 ## License
 
-The MIT License (MIT). Please see [License File](https://github.com/versalle88/kreator/blob/master/LICENSE.md) for more information.
+The MIT License (MIT). Please see [License File](https://github.com/versalle88/kreator/blob/master/LICENSE.md) for more
+information.

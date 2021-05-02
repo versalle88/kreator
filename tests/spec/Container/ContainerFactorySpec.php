@@ -1,4 +1,9 @@
-<?php /** @noinspection PhpIllegalPsrClassPathInspection */
+<?php
+
+/**
+ * @noinspection PhpIllegalPsrClassPathInspection
+ * @noinspection PhpUnused
+ */
 
 namespace spec\Versalle\Framework\Container;
 
@@ -7,16 +12,11 @@ use Psr\Container\ContainerInterface;
 use Versalle\Framework\Container\ContainerFactory;
 use Versalle\Framework\FileSystem\DirectoryList;
 
-/**
- * Class ContainerFactorySpec
- *
- * @noinspection PhpUnused
- */
 class ContainerFactorySpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith(new DirectoryList(FRAMEWORK_ROOT_DIR));
+        $this->beConstructedWith(_get(DirectoryList::class));
     }
 
     function it_is_initializable()

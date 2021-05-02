@@ -4,7 +4,6 @@ declare(strict_types=1);
 
 namespace App\HelloFriend\Responder;
 
-use Exception;
 use Psr\Http\Message\ResponseInterface;
 use Versalle\Framework\ActionDomainResponder\Responder\Response\ViewFactory;
 
@@ -17,11 +16,6 @@ final class HelloFriendIndexResponder
         $this->viewFactory = $viewFactory;
     }
 
-    /**
-     * @return ResponseInterface
-     *
-     * @throws Exception
-     */
     public function respond(): ResponseInterface
     {
         return $this->viewFactory->create('HelloFriend::hello_friend');

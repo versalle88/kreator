@@ -1,4 +1,9 @@
-<?php /** @noinspection PhpIllegalPsrClassPathInspection */
+<?php
+
+/**
+ * @noinspection PhpIllegalPsrClassPathInspection
+ * @noinspection PhpUnused
+ */
 
 namespace spec\Versalle\Framework\Presentation\Template;
 
@@ -7,16 +12,11 @@ use Versalle\Framework\FileSystem\DirectoryList;
 use Versalle\Framework\Presentation\Template\TwigTemplateRenderer;
 use Versalle\Framework\Presentation\Template\TwigTemplateRendererFactory;
 
-/**
- * Class TwigTemplateRendererFactorySpec
- *
- * @noinspection PhpUnused
- */
 class TwigTemplateRendererFactorySpec extends ObjectBehavior
 {
     function let()
     {
-        $this->beConstructedWith(new DirectoryList(FRAMEWORK_ROOT_DIR));
+        $this->beConstructedWith(_get(DirectoryList::class));
     }
 
     function it_is_initializable()

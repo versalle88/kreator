@@ -17,6 +17,7 @@ final class TwigTemplateRenderer implements TemplateRendererInterface
 
     public function render(string $template, array $data = []): string
     {
+        /** @noinspection PhpUnhandledExceptionInspection */
         return $this->twigEnvironment->render($template, $data);
     }
 }
