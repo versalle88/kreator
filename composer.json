@@ -40,7 +40,7 @@
     },
     "config": {
         "platform": {
-            "php": "7.2.24"
+            "php": "7.2.34"
         },
         "sort-packages": true
     },
